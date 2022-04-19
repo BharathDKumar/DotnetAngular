@@ -1,16 +1,49 @@
-<ul class="navbar-nav" *ngIf="isAuthenticated | async">
-    <li class="nav-item">
-        <a  class="nav-link text-dark" [routerLink]='["/authentication/profile"]' title="Manage">Hello {{ userName | async }}</a>
-    </li>
-    <li class="nav-item">
-        <a  class="nav-link text-dark" [routerLink]='["/authentication/logout"]' [state]='{ local: true }' title="Logout">Logout</a>
-    </li>
+<ul class="navbar-nav nav-menu-inner ml-auto" *ngIf="isAuthenticated | async">
+  <li>
+    <a
+      data-toggle="collapse"
+      data-target=".navbar-collapse.show"
+      class="link-menu"
+      [routerLink]="['/authentication/profile']"
+    >
+      Hello {{ userName | async }}</a
+    >
+  </li>
+  <li>
+    <a
+      data-toggle="collapse"
+      data-target=".navbar-collapse.show"
+      class="link-menu"
+      [routerLink]="['/authentication/logout']"
+      [state]="{ local: true }"
+      title="Logout"
+    >
+      <i class="fa fa-logout"></i>Logout</a
+    >
+  </li>
 </ul>
-<ul class="navbar-nav" *ngIf="(isAuthenticated | async) !== true">
-  <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]='["/authentication/register"]'>Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]='["/authentication/login"]'>Login</a>
-    </li>
+<ul
+  class="navbar-nav nav-menu-inner ml-auto"
+  *ngIf="(isAuthenticated | async) !== true"
+>
+  <li>
+    <a
+      data-toggle="collapse"
+      data-target=".navbar-collapse.show"
+      class="link-menu"
+      [routerLink]="['/authentication/register']"
+    >
+      <i class="fa fa-register"></i> Register</a
+    >
+  </li>
+  <li>
+    <a
+      data-toggle="collapse"
+      data-target=".navbar-collapse.show"
+      class="link-menu"
+      [routerLink]="['/authentication/login']"
+    >
+      <i class="fa fa-login"></i> Login</a
+    >
+  </li>
 </ul>

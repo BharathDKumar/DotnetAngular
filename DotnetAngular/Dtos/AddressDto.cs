@@ -1,6 +1,6 @@
 ﻿namespace DotnetAngular.Dtos
 {
-    public class AddressDto
+    public record AddressDto()
     {
         public string AddressLine1 { get; set; }
         public string City { get; set; }
